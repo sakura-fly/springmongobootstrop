@@ -74,9 +74,9 @@ public class Page<T> {
 		builder.append(pageNum);
 		builder.append("\", \"pageTotal\":\"");
 		builder.append(pageTotal);
-		builder.append("\", \"content\":\"");
+		builder.append("\", \"content\":");
 		builder.append(content);
-		builder.append("\", \"sort\":\"");
+		builder.append(", \"sort\":\"");
 		builder.append(sort);
 		builder.append("\"}");
 		return builder.toString();

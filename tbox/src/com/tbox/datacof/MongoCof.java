@@ -10,20 +10,24 @@ import com.mongodb.MongoClient;
 import com.tbox.util.MongodbInfo;
 
 
-@Configuration
-@EnableMongoRepositories("com.tbox")                                     
-public class MongoCof extends AbstractMongoConfiguration{
+public class MongoCof{
+	
+	
 
-	@Override
-	protected String getDatabaseName() {
-		return MongodbInfo.NAME;
-	}
-
-	@Override
-	public Mongo mongo() throws Exception {
-		return new MongoClient(MongodbInfo.HOST);
-	}
-
+//@Configuration
+//@EnableMongoRepositories("com.tbox")                                     
+//public class MongoCof extends AbstractMongoConfiguration{
+//
+//	@Override
+//	protected String getDatabaseName() {
+//		return MongodbInfo.NAME;
+//	}
+//
+//	@Override
+//	public Mongo mongo() throws Exception {
+//		return new MongoClient(MongodbInfo.HOST);
+//	}
+//
 
 	
 }

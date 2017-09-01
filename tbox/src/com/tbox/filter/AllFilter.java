@@ -26,7 +26,12 @@ public class AllFilter implements Filter{
 		HttpServletResponse resp = (HttpServletResponse)response;
 		req.setCharacterEncoding("utf-8");
 		resp.setCharacterEncoding("utf-8");
-		chain.doFilter(request, response);
+		try {
+			chain.doFilter(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+			resp.sendRedirect(req.getContextPath() + "/");
+		}
 	}
 
 	public void init(FilterConfig arg0) throws ServletException {

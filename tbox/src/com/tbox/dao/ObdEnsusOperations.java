@@ -9,5 +9,5 @@ import com.tbox.model.Page;
 
 public interface ObdEnsusOperations  {
 	public Page<Ensus> findAll(Page<Ensus> page);
-	public List<Ensus> finaAll();
+	public List<Ensus> listAll();
 }  
