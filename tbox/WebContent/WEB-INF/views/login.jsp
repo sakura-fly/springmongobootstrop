@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="stylesheet" href="<%=basePath%>css/bootstrap.min.css">
 <link  type="image/x-icon" rel="shortcut icon" href="<%=basePath%>img/favicon.ico">
 <script src="<%=basePath%>js/jquery-3.1.1.min.js"></script>

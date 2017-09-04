@@ -10,41 +10,47 @@ String basePath = request.getContextPath() + "/";
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>用户活跃统计</title>
-	<link rel="stylesheet" href="<%=basePath%>css/bootstrap.min.css">
 	<link  type="image/x-icon" rel="shortcut icon" href="<%=basePath%>img/favicon.ico">
-	<script src="<%=basePath%>js/jquery-3.1.1.min.js"></script>
-	<script src="<%=basePath%>js/bootstrap.min.js"></script>
-	<style>
-		body {
-			padding: 51px;
-		}
-	</style>
+
 </head>
 
 <body>
 
 		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<span class="navbar-brand">tbox</span>
-					<span class="navbar-brand glyphicon glyphicon-menu-right"></span>
-					<span class="navbar-brand">数据展示</span>
-					<span class="navbar-brand glyphicon glyphicon-menu-right"></span>
-					<span class="navbar-brand">用户活跃统计</span>
+			<!-- <div class="container"> -->
+				<div class="navbar-header" style="padding-left: 200px;">
+				<!-- 	<ul class="breadcrumb" style="background: #000000;color: #ffffff">
+					  <li class="active"><a href="#">Home</a></li>
+					  <li class="active"><a href="#">Library</a></li>
+					  <li class="active">Data</li>
+					</ul> -->
+					<span class="navbar-brand">T-BOX</span>
+					<!-- <span class="">/</span> -->
+					<!-- <span class="navbar-brand glyphicon glyphicon-menu-right"></span> -->
+					<!-- <span class="navbar-brand">数据展示</span> -->
+					<!-- <span class="navbar-brand glyphicon glyphicon-menu-right"></span> -->
+					<!-- <span class="navbar-brand">用户活跃统计</span>  -->
 				</div>
 
-				<div  class="collapse navbar-collapse navbar-right">
+				<div  class="collapse navbar-collapse navbar-right" style="padding-right: 30px">
 
 					<a id="export" class="navbar-brand" href="javascript:void(0);">导出</a> 
-					<a class="navbar-brand" href="/tbox/logout">退出</a>
+					<a class="navbar-brand" href="<%=basePath%>/logout">退出</a>
 				</div>
-			</div>
+			<!-- </div> -->
 		</nav>
-
-		<div class="starter-template"></div>
-		<div class="container ">
+		
+		<div class=" " style="padding-top: 50px;">
+			<div style="padding: 0px;">
+				<ol class="breadcrumb" >
+				  <li><a href="#">T-BOX</a></li>
+				  <li><a href="#">数据展示</a></li>
+				  <li class="active">用户活跃度</li>
+				</ol>
+			</div>	
 			<div class="starter-template">
 				<table class="table table-bordered table-hover table-striped">
 					<thead>
@@ -136,7 +142,6 @@ String basePath = request.getContextPath() + "/";
 			data: pant,
 		})
 		.done(function(e) {
-			console.log("done");
 			page = e;
 			var ensus = e.content;
 			print_table (ensus);
@@ -144,11 +149,8 @@ String basePath = request.getContextPath() + "/";
 			change_page_stat ();
 		})
 		.fail(function(e) {
-			console.log("error");
-			console.log();
 		})
 		.always(function() {
-			console.log("complete");
 		});
 	}
 
@@ -202,11 +204,9 @@ String basePath = request.getContextPath() + "/";
 				alert("导出失败")
 			}
 
-			console.log("success");
 		}).fail(function(e) {
 			alert("导出失败")
 		}).always(function() {
-			console.log("complete");
 		});
 
 	});
