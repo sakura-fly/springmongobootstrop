@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.1.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.5.xsd">
+
+    <!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射-->
+    <mvc:annotation-driven>
+
+    </mvc:annotation-driven>
+
+    <context:component-scan base-package="com.gsdea.controller"/>
+    <!--<context:component-scan base-package="com.sdea.spring.mongodb" />-->
+    <!--
+        <mongo:mongo host="localhost" port="27017" id="mongo" />
+
+        <mongo:mongo host="localhost" port="27017" id="test">
+            <mongo:options connections-per-host="8"
+                           threads-allowed-to-block-for-connection-multiplier="4"
+                           connect-timeout="1000"
+                           max-wait-time="1500}"
+                           auto-connect-retry="true"
+                           socket-keep-alive="true"
+                           socket-timeout="1500"
+                           slave-ok="true"
+                           write-number="1"
+                           write-timeout="0"
+                           write-fsync="true" />
+        </mongo:mongo>
+        <mongo:db-factory dbname="journaldev" mongo-ref="mongo" id="mongoDbFactory" />-->
+    <!-- <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+    <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+</bean>
+
+
+
+<bean id="defaultMongoTypeMapper"
+      class="org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper">
+    <constructor-arg name="typeKey"><null/></constructor-arg>
+</bean>
+
+
+<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+    <constructor-arg name="mongo" ref="mongo" />
+    <constructor-arg name="databaseName" value="journaldev"></constructor-arg>
+</bean>
+
+
+
+-->
+    <bean id="defaultMongoTypeMapper"
+          class="org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper">
+        <constructor-arg name="typeKey">
+            <null/>
+        </constructor-arg>
+    </bean>
+    <!--<mongo:db-factory id="mongoDbFactory"-->
+    <!--host="127.0.0.1"-->
+    <!--port="27017"-->
+    <!--dbname="test"-->
+
+    <!--mongo-ref="mongo"/>-->
+
+
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongo" ref="mongo"/>
+        <constructor-arg name="databaseName" value="sdea"></constructor-arg>
+    </bean>
+
+    <!--<bean id="obdctlDAO" class="com.sdea.spring.mongodb.dao.Impl.obdctlDAOImpl">-->
+    <!--<constructor-arg name="mongoOps" ref="mongoTemplate"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="appctlDAO" class="com.sdea.spring.mongodb.dao.Impl.appctlDAOImpl">-->
+    <!--<constructor-arg name="mongoOps" ref="mongoTemplate"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="userDAO" class="com.sdea.spring.mongodb.dao.Impl.userDAOImpl">-->
+    <!--<constructor-arg name="mongoOps" ref="mongoTemplate"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="obddtcDAO" class="com.sdea.spring.mongodb.dao.Impl.obddtcDAOImpl">-->
+    <!--<constructor-arg name="mongoOps" ref="mongoTemplate"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="uploadDAO" class="com.sdea.spring.mongodb.dao.Impl.uploadDAOImpl">-->
+    <!--<constructor-arg name="mongoOps" ref="mongoTemplate"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="devmanCtlDAO" class="com.sdea.spring.mongodb.dao.Impl.devmanctlDAOImpl">-->
+    <!--<constructor-arg name="mongoOps" ref="mongoTemplate"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="usermanCtlDAO" class="com.sdea.spring.mongodb.dao.Impl.usermanCtlDAOImpl">-->
+    <!--<constructor-arg name="mongoOps" ref="mongoTemplate"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="devupl_logDAO" class="com.sdea.spring.mongodb.dao.Impl.devupl_logDAOImpl">-->
+    <!--<constructor-arg name="mongoOps" ref="mongoTemplate"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="censusDAO" class="com.sdea.spring.mongodb.dao.Impl.censusDAOImpl">-->
+    <!--<constructor-arg name="mongoOps" ref="mongoTemplate"/>-->
+    <!--</bean>-->
+
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <!--- StringHttpMessageConverter bean  -->
+    <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter"/>
+
+    <bean id="mappingJacksonHttpMessageConverter"
+          class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+    <mvc:annotation-driven/>
+
+    <mongo:mongo host="192.168.1.117" port="27017">
+        <mongo:options connections-per-host="4"
+                       connect-timeout="1000"
+                       max-wait-time="1500"
+                       auto-connect-retry="true"
+                       socket-keep-alive="true"
+                       socket-timeout="1500"
+                       write-fsync="true"/>
+    </mongo:mongo>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="10485760"/>
+        <property name="defaultEncoding">
+            <value>UTF-8</value>
+        </property>
+
+    </bean>
+
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
+
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!-- 访问静态文件（jpg,js,css）的方法-->
+
+    <!--<mvc:resources location="/scripts/" mapping="/scripts/**" />-->
+    <!--<mvc:resources location="/styles/" mapping="/styles/**" />-->
+    <!--&lt;!&ndash;<mvc:resources location="/views/" mapping="/views/**" />&ndash;&gt;-->
+    <!--<mvc:resources location="/libs/" mapping="/libs/**" />-->
+    <!--<mvc:resources location="/route/" mapping="/route/**" />-->
+    <mvc:resources location="/img/" mapping="/img/**"/>
+    <!--<mvc:resources location="/upfile/" mapping="/upfile/**" />-->
+    <mvc:resources location="/js/" mapping="/js/**"/>
+    <mvc:resources location="/app/" mapping="/app/**"/>
+    <mvc:resources location="/fonts/" mapping="/fonts/**"/>
+    <mvc:resources location="/css/" mapping="/css/**"/>
+    <mvc:resources location="/write/" mapping="/write/**"/>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+</beans>

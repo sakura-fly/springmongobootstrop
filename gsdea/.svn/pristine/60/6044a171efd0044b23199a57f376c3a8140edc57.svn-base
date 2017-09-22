@@ -1,0 +1,138 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: lw
+  Date: 17-1-10
+  Time: 上午11:31
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+
+    <title>博波云平台</title>
+
+    <link rel="stylesheet" media="all" href="libs/jquery-jvectormap-2.0.3/jquery-jvectormap-2.0.3.css">
+
+
+    <meta charset="utf-8">
+
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+
+    <title>博波云平台</title>
+
+    <link href="libs/Metro-UI/css/metro.min.css" rel="stylesheet">
+    <link href="libs/Metro-UI/css/metro-schemes.css" rel="stylesheet">
+    <link href="libs/Metro-UI/css/metro-icons.css" rel="stylesheet">
+    <link href="libs/Metro-UI/css/metro-responsive.css" rel="stylesheet">
+
+    <link href="libs/Metro-UI/css/metro.css" rel="stylesheet">
+    <link href="libs/Metro-UI/css/metro-icons.css" rel="stylesheet">
+    <link href="libs/Metro-UI/css/metro-responsive.css" rel="stylesheet">
+    <link href="libs/Metro-UI/css/metro-schemes.css" rel="stylesheet">
+
+
+    <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+    <link href="styles/sdeaVF.css" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="libs/jquery-jvectormap-2.0.3/jquery-jvectormap-2.0.3.css">
+
+
+    <meta charset="utf-8">
+
+    <script id="jquery_183" type="text/javascript" class="library" src="libs/jQuery/jquery-2.2.3.js"></script>
+
+    <script src="libs/High560/Highcharts-5.0.6/highcharts.js"></script>
+    <script src="libs/High560/Highcharts-5.0.6/maps/modules/map.js"></script>
+    <!--<script src="http://code.highcharts.com/maps/highmaps.js"></script>-->
+    <script src="libs/High560/Highcharts-5.0.6/maps/modules/data.js"></script>
+    <script src="libs/High560/Highcharts-5.0.6/maps/modules/drilldown.js"></script>
+    <script src="libs/High560/Highcharts-5.0.6/maps/modules/funnel.js"></script>
+    <script src="libs/High560/Highcharts-5.0.6/maps/modules/exporting.js"></script>
+    <script type="text/javascript" src="route/earth/cn-china-by-peng8.js"></script>
+
+
+    <!--
+
+    <script type="text/javascript" src="libs/jquery-jvectormap-2.0.3/jquery-jvectormap-2.0.3.min.js"></script>
+    <script type="text/javascript" src="route/earth/jquery-jvectormap-cn-merc.js"></script>
+
+
+         <script src="http://code.highcharts.com/highcharts.js"></script>
+         <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+  <div ui-view></div>
+         <script src="http://code.highcharts.com/maps/modules/data.js"></script>
+         <script src="http://code.highcharts.com/maps/modules/drilldown.js"></script>-->
+
+
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<script id="jquery_183" type="text/javascript" class="library" src="libs/jQuery/jquery-2.2.3.js"></script>
+
+
+
+<script type="text/javascript" src="libs/jquery-jvectormap-2.0.3/jquery-jvectormap-2.0.3.min.js"></script>
+<script type="text/javascript" src="route/earth/jquery-jvectormap-cn-merc.js"></script>
+<script src="libs/require.js"></script>
+<script src="route/bootstrap.js"></script>
+
+
+
+<div id='container_earth11'></div>
+
+<script>
+
+$('#container_earth11').vectorMap({
+    map: 'cn_merc',
+    focusOn: {
+        x: 0.5,
+        y: 0.5,
+        scale: 2
+    }
+
+})
+
+
+</script>
+<div>
+
+</div>
+
+
+<div ui-view></div>
+
+
+<script src="libs/require.js"></script>
+<script src="route/bootstrap.js"></script>
+<script>
+<div id='container_earth11' style="width: 800px; "></div>
+</script>
+<div></div>
+
+
+<div> <div ui-view></div></div>
+
+
+
+<script src="libs/require.js"></script>
+<script src="route/bootstrap.js"></script>
+    -->
+
+
+</head>
+<body>
+
+
+<div>
+    <div ui-view></div>
+</div>
+
+
+<script src="libs/require.js"></script>
+<script src="route/bootstrap.js"></script>
+</body>
+</html>
